@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Alvarez_AppApuntes.Views.AlvarezConteoCaracteres"
              Title="AlvarezConteoCaracteres">
-    <Grid>
+    <Grid Padding="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -18,12 +18,16 @@
         <Entry x:Name="txtInput" Grid.Row="1"/>
 
         <Button Text="Calcular" Clicked="OnCalculateClicked" Grid.Row="2"/>
-        <Button Text="Limpiar" Clicked="OnClearClicked" Grid.Row="3"/>
 
-        <Label Text="Resultados:" Grid.Row="4"/>
-        <Label x:Name="lblNumbers" Grid.Row="5"/>
-        <Label x:Name="lblLetters" Grid.Row="6"/>
-        <!-- ... Añade labels para las otras estadísticas -->
+        <StackLayout x:Name="Resultados" Grid.Row="3" Grid.ColumnSpan="2" IsVisible="False">
+            <Label x:Name="Alvarez_Numeros"/>
+            <Label x:Name="Alvarez_Letras"/>
+            <Label x:Name="Alvarez_Vocales"/>
+            <Label x:Name="Alvarez_Mayus"/>
+            <Label x:Name="Alvarez_Minus"/>
+            <Label x:Name="Alvarez_Total"/>
+        </StackLayout>
 
+        <Button Text="Limpiar todo" Clicked="OnClearClicked" Grid.Row="4"/>
     </Grid>
 </ContentPage>
